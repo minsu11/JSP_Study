@@ -13,13 +13,15 @@ public class Student {
     private LocalDateTime createdAt;
     // java beans
 
+    public Student() {
+    }
 
-    public Student(String id, String name, Gender gender, int age) {
+    public Student(String id, String name, Gender gender, int age, LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.age = age;
-        this.createdAt = LocalDateTime.now();
+        this.createdAt = createdAt;
     }
 
     public String getId() {

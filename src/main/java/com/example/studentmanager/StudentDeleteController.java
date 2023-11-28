@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @WebServlet(name = "studentDeleteServlet", urlPatterns = "/student/delete")
-public class StudentDeleteServlet implements Command {
+public class StudentDeleteController implements Command {
 
 //    @Override
 //    public void init(ServletConfig config) throws ServletException {
@@ -30,6 +30,7 @@ public class StudentDeleteServlet implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         StudentRepository studentRepository = (StudentRepository) request.getServletContext().getAttribute("studentRepository");
+        log.error("getParameter 호출하기 전");
         String id = request.getParameter("id");
         log.error("id:{}", id);
         studentRepository.deleteById(id);
